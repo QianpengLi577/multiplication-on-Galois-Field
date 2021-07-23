@@ -1,0 +1,88 @@
+//一位的二选一
+module mux2_1(label,src1,src2,out);
+input label;
+input src1;
+input src2;
+output out;
+	assign out = label ? src1^src2 : src2;
+endmodule
+
+module m1(label,src1,src2,out1);
+input label;
+input[31:0] src1;
+input[31:0] src2;
+output[31:0] out1;
+mux2_1 t0(label,src1[0],src2[0],out1[0]);
+mux2_1 t1(label,src1[1],src2[1],out1[1]);
+mux2_1 t2(label,src1[2],src2[2],out1[2]);
+mux2_1 t3(label,src1[3],src2[3],out1[3]);
+mux2_1 t4(label,src1[4],src2[4],out1[4]);
+mux2_1 t5(label,src1[5],src2[5],out1[5]);
+mux2_1 t6(label,src1[6],src2[6],out1[6]);
+mux2_1 t7(label,src1[7],src2[7],out1[7]);
+mux2_1 t8(label,src1[8],src2[8],out1[8]);
+mux2_1 t9(label,src1[9],src2[9],out1[9]);
+mux2_1 t10(label,src1[10],src2[10],out1[10]);
+mux2_1 t11(label,src1[11],src2[11],out1[11]);
+mux2_1 t12(label,src1[12],src2[12],out1[12]);
+mux2_1 t13(label,src1[13],src2[13],out1[13]);
+mux2_1 t14(label,src1[14],src2[14],out1[14]);
+mux2_1 t15(label,src1[15],src2[15],out1[15]);
+mux2_1 t16(label,src1[16],src2[16],out1[16]);
+mux2_1 t17(label,src1[17],src2[17],out1[17]);
+mux2_1 t18(label,src1[18],src2[18],out1[18]);
+mux2_1 t19(label,src1[19],src2[19],out1[19]);
+mux2_1 t20(label,src1[20],src2[20],out1[20]);
+mux2_1 t21(label,src1[21],src2[21],out1[21]);
+mux2_1 t22(label,src1[22],src2[22],out1[22]);
+mux2_1 t23(label,src1[23],src2[23],out1[23]);
+mux2_1 t24(label,src1[24],src2[24],out1[24]);
+mux2_1 t25(label,src1[25],src2[25],out1[25]);
+mux2_1 t26(label,src1[26],src2[26],out1[26]);
+mux2_1 t27(label,src1[27],src2[27],out1[27]);
+mux2_1 t28(label,src1[28],src2[28],out1[28]);
+mux2_1 t29(label,src1[29],src2[29],out1[29]);
+mux2_1 t30(label,src1[30],src2[30],out1[30]);
+mux2_1 t31(label,src1[31],src2[31],out1[31]);
+
+endmodule
+
+module GF(poly,src1,src2,out);
+input[31:0] poly;
+input[31:0] src1;
+input[31:0] src2;
+output[31:0] out;
+wire [31:0] out1;
+wire [31:0] out2;
+wire [31:0] out3;
+wire [31:0] out4;
+wire [31:0] out5;
+wire [31:0] out6;
+wire [31:0] out7;
+wire [31:0] out8;
+wire [31:0] out9;
+wire [31:0] out10;
+wire [31:0] out11;
+wire [31:0] out12;
+wire [31:0] out13;
+wire [31:0] out14;
+wire [31:0] out15;
+wire [31:0] out16;
+m1 a1(src2[8],src1,32'b0,out1);
+m1 b1(out1[31],poly,{out1[30:0],1'b0},out2);
+m1 a2(src2[7],src1,out2,out3);
+m1 b2(out3[31],poly,{out3[30:0],1'b0},out4);
+m1 a3(src2[6],src1,out4,out5);
+m1 b3(out5[31],poly,{out5[30:0],1'b0},out6);
+m1 a4(src2[5],src1,out6,out7);
+m1 b4(out7[31],poly,{out7[30:0],1'b0},out8);
+m1 a5(src2[4],src1,out8,out9);
+m1 b5(out9[31],poly,{out9[30:0],1'b0},out10);
+m1 a6(src2[3],src1,out10,out11);
+m1 b6(out11[31],poly,{out11[30:0],1'b0},out12);
+m1 a7(src2[2],src1,out12,out13);
+m1 b7(out13[31],poly,{out13[30:0],1'b0},out14);
+m1 a8(src2[1],src1,out14,out15);
+m1 b8(out15[31],poly,{out15[30:0],1'b0},out16);
+m1 oo(src2[0],src1,out16,out);
+endmodule
